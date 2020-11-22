@@ -24,23 +24,29 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <div 
+      className="App"
+      style={{ 
+        display: `flex`,
+        flexDirection: `column`,
+        position: `absolute`,
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0,
+        overflow: `hidden`,
+        minWidth: `345px` 
+      }}
+    >
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `16px auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
+
         <main>{children}</main>
         {/* <footer style={{
           marginTop: `2rem`
         }}>
           Author: Matthew Vilhauer
         </footer> */}
-      </div>
-    </>
+    </div>
   )
 }
 

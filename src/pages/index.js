@@ -1,30 +1,60 @@
 import React from "react"
-import { Link } from "gatsby"
+import { graphql, Link } from 'gatsby'
 
-import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
-  <div 
-    className="App"
-    style={{ 
-      display: `flex`,
-      flexDirection: `column`,
-      position: `absolute`,
-      top: 0,
-      bottom: 0,
-      left: 0,
-      right: 0,
-      overflow: `hidden`,
-      minWidth: `319px` 
-    }}
-  >
-    <Layout>
+const IndexPage = ({ data }) => {
+  const { edges } = data.allMarkdownRemark;
+  
+  return (
+    <div
+      style={{
+        margin: `16px auto`,
+        maxWidth: 960,
+        padding: `0 1.0875rem 1.45rem`,
+      }}
+    >
       <SEO title="Home" />
-      <h3 style={{ textAlign: "center" }}>The Intersection of Data Science, Collaboration, and Consciousness</h3>
-    </Layout>
-  </div>
-)
+      <h3 className="Doses" style={{ textAlign: "center", marginTop: "16px" }}>The Intersection of Data Science, Collaboration, and Consciousness</h3>
+      <div>
+        {edges.map(edge => {
+          const { frontmatter, html } = edge.node
+          
+          return (
+            <div key={frontmatter.path}>
+              <h2 style={{ margin: "0px" }}><Link to={frontmatter.path} className="homePagePostHeader">{frontmatter.title}</Link></h2>
+              <small>
+                {frontmatter.date}
+              </small>
+              <p><em>{frontmatter.excerpt}</em></p>
+              <div className="blogpost" style={{ paddingTop: "0px" }} dangerouslySetInnerHTML={{ __html: html }} />
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  )
+};
+
+export const query = graphql`
+  query HomePageQuery {
+    allMarkdownRemark(sort: { order: DESC, fields: frontmatter___date }) {
+      totalCount
+      edges {
+        node {
+          id
+          html
+          frontmatter {
+            title
+            date(formatString: "MMMM DD, YYYY")
+            path
+            tags
+            excerpt
+          }
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage

@@ -12,12 +12,7 @@ const Header = ({ siteTitle }) => (
       background: `black`,
       display: `table`,
       flex: `0 0 auto`,
-      height: `50px`,
       width: `100%`,
-      whiteSpace: `nowrap`,
-      lineHeight: `normal`,
-      outlineOffset: `-1px`,
-      marginBottom: `16px`
     }}
   >
     <div
@@ -26,7 +21,7 @@ const Header = ({ siteTitle }) => (
         display: `table-cell`,
         verticalAlign: `top`,
         width: `100%`,
-        padding: `.5rem`,
+        padding: `.25rem`,
         textAlign: `center`
       }}
     >
@@ -37,18 +32,26 @@ const Header = ({ siteTitle }) => (
         verticalAlign: `-webkit-baseline-middle`,
         position: `relative`,
       }}>
-        <img
-          alt="logo"
-          src={Logo}
+        <Link
+          to="/"
           style={{
-            position: `relative`,
-            border: `none`,
-            padding: `0px`,
-            margin: `0px`,
-            height: `48px`
-
+            color: `white`,
+            textDecoration: `none`,
           }}
-        />
+        >
+          <img
+            alt="logo"
+            src={Logo}
+            style={{
+              position: `relative`,
+              border: `none`,
+              padding: `0px`,
+              margin: `0px`,
+              height: `50px`
+
+            }}
+          />
+        </Link>
       </div>
       <div      
         className="HeaderTitle"       
@@ -57,7 +60,7 @@ const Header = ({ siteTitle }) => (
         verticalAlign: `text-top`,
         position: `relative`
       }}>
-        <h2 style={{ margin: 0 }}>
+        <h2 className="Doses" style={{ margin: 0 }}>
           <Link
             to="/"
             style={{

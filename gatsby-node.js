@@ -3,7 +3,7 @@
  *
  * See: https://www.gatsbyjs.com/docs/node-apis/
  */
-
+const React = require("react")
 const path = require('path')
 
 exports.createPages = ({ graphql, actions }) => {
@@ -19,9 +19,9 @@ exports.createPages = ({ graphql, actions }) => {
             allMarkdownRemark(
               sort: { order: ASC, fields: [frontmatter___date] }
             ) {
-              html
               edges {
                 node {
+                  html
                   frontmatter {
                     path
                     title
@@ -52,3 +52,4 @@ exports.createPages = ({ graphql, actions }) => {
     )
   })
 }
+

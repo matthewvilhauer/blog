@@ -6,7 +6,16 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    'gatsby-transformer-remark',
+    {
+      // plugin that transforms the docs (.md) files into html contents added and configured
+       resolve:`gatsby-transformer-remark`,
+       options:{
+            commonmark: true,
+            footnotes: true,
+            pedantic: true,
+            gfm: true,
+       }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -34,9 +43,10 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/logo.png`, // This path is relative to the root of the site.
       },
-    },
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
+  pathPrefix: '/blog'
 }

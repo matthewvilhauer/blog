@@ -7,13 +7,7 @@ const IndexPage = ({ data }) => {
   const { edges } = data.allMarkdownRemark;
   
   return (
-    <div
-      style={{
-        margin: `16px auto`,
-        maxWidth: 960,
-        padding: `0 1.0875rem 1.45rem`,
-      }}
-    >
+    <>
       <SEO title="Home" />
       <h3 className="Doses" style={{ textAlign: "center", marginTop: "16px" }}>The Intersection of Data Science, Collaboration, and Consciousness</h3>
       <div>
@@ -32,7 +26,7 @@ const IndexPage = ({ data }) => {
           )
         })}
       </div>
-    </div>
+    </>
   )
 };
 

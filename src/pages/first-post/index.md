@@ -1,9 +1,9 @@
 ---
 path: '/first-post'
-date: '2020-11-21'
+date: '2020-12-21'
 title: 'First Post'
 tags: ['2020']
-excerpt: 'First One Is Always the Hardest'
+excerpt: 'First one is always the hardest'
 ---
 
-Here is where I'm going to describe my intentions for the blog.
+Here is where I'm going to describe my personal and professional intentions for the blog.

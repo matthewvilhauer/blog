@@ -35,7 +35,7 @@ const Layout = ({ children }) => {
         left: 0,
         right: 0,
         overflow: `hidden`,
-        minWidth: `345px` 
+        minWidth: `360px` 
       }}
     >
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
@@ -43,7 +43,9 @@ const Layout = ({ children }) => {
           style={{
             margin: `16px auto`,
             maxWidth: 960,
-            padding: `0 1.0875rem 1.45rem`,
+            padding: `0 16px`,
+            width: `100%`,
+            overflowY: `auto`
           }}
         >
           <main>{children}</main>

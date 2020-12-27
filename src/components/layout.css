@@ -233,7 +233,8 @@ h1 {
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 2.25rem;
-  line-height: 1.1;
+  line-height: 1.1
+
 }
 h2 {
   margin-left: 0;
@@ -249,8 +250,8 @@ h2 {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  font-size: 1.62671rem;
-  line-height: 1.1;
+  line-height: 1.1
+
 }
 h3 {
   margin-left: 0;
@@ -624,8 +625,16 @@ pre tt:after {
 }
 
 /* My CSS Customizations */
-.Doses {
+.doses {
   font-family: 'Dosis', sans-serif;
+}
+.appHeaderTitle {
+  line-height: 48px;
+  padding-left: 4px;
+}
+.tagLine {
+  color: #168f97;
+  font-style: oblique;
 }
 .homePagePostHeader {
   color: #00a450;
@@ -636,13 +645,13 @@ pre tt:after {
   padding: 16px 0px 8px;
   margin: 0px;
   text-decoration: none;
+
   -webkit-font-smoothing: antialiased;
 }
 .postPageHeader {
   color: #00a450;
   display: block;
   font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-  font-size: 2.5em;
   font-weight: 400;
   padding: 16px 0px;
   margin: 0px;

@@ -8,7 +8,7 @@ const Template = ({ data, pathContext }) => {
   const { next, prev } = pathContext
 
   return (
-    <div style={{ textAlign: "center", padding: "16px" }}>
+    <>
       <h1 className="postPageHeader">{title}</h1>
       <div>
         <em>{date}</em>
@@ -19,7 +19,7 @@ const Template = ({ data, pathContext }) => {
       <p>
         {prev && (
           <Link to={prev.frontmatter.path}>
-            {prev.frontmatter.title} <span role="img" aria-label="point-left">👈 </span>Previous
+            {prev.frontmatter.title} <span role="img" aria-label="point-left">{' '}👈 </span>Previous
           </Link>
         )}
       </p>
@@ -31,7 +31,7 @@ const Template = ({ data, pathContext }) => {
           </Link>
         )}
       </p>
-    </div>
+    </>
   )
 }
 

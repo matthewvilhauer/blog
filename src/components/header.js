@@ -18,24 +18,21 @@ const Header = ({ siteTitle }) => (
       className="tableCell"  
       style={{
         display: `table-cell`,
-        verticalAlign: `top`,
         width: `100%`,
-        padding: `.25rem`,
         textAlign: `center`
       }}
     >
-      <div
+      <span
         className="HeaderLogo"       
         style={{
         display: `inline-block`,
-        verticalAlign: `-webkit-baseline-middle`,
+        verticalAlign: `middle`,
         position: `relative`,
       }}>
         <Link
           to="/"
           style={{
-            color: `white`,
-            textDecoration: `none`,
+            display: `flex`
           }}
         >
           <img
@@ -46,20 +43,19 @@ const Header = ({ siteTitle }) => (
               border: `none`,
               padding: `0px`,
               margin: `0px`,
-              height: `50px`
-
+              height: `40px`
             }}
           />
         </Link>
-      </div>
-      <div      
+      </span>
+      <span      
         className="HeaderTitle"       
         style={{
         display: `inline-block`,
-        verticalAlign: `text-top`,
+        verticalAlign: `middle`,
         position: `relative`
       }}>
-        <h2 className="Doses" style={{ margin: 0 }}>
+        <h2 className="appHeaderTitle doses" style={{ margin: 0 }}>
           <Link
             to="/"
             style={{
@@ -70,7 +66,7 @@ const Header = ({ siteTitle }) => (
             {siteTitle}
           </Link>
         </h2>
-      </div>
+      </span>
     </div>
   </header>
 )

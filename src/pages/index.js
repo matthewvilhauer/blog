@@ -9,7 +9,7 @@ const IndexPage = ({ data }) => {
   return (
     <>
       <SEO title="Home" />
-      <h3 className="Doses" style={{ textAlign: "center", marginTop: "16px" }}>The Intersection of Data Science, Collaboration, and Consciousness</h3>
+      <h4 className="doses tagLine" style={{ textAlign: "center" }}>A blog about the intersection of data science, collaboration, and consciousness.</h4>
       <div>
         {edges.map(edge => {
           const { frontmatter, html } = edge.node
